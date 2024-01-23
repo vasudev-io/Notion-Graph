@@ -141,3 +141,4 @@ __pypackages__/
 
 **/*.png
 **/*.html
+.vercel
