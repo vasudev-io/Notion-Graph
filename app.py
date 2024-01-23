@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 import notion_graph.parser  # Import your script here
 import subprocess
 
-app = Flask(__name__, template_folder="/templates")
+app = Flask(__name__, template_folder="/templates_nnew")
 
 @app.route('/', methods=['GET', 'POST'])
 
