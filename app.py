@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        command = ['pdm', 'run', 'start', '-p', 'ed228bfa2ece43f0a34a0aa95985a501', '-t', 'secret_37RsVuHNkIx573FXkg4geRqXcmiBSlBH45QxmVEXIQ9', '-o', './graph_out.html']
+        command = ['pdm','run', 'start', '-p', 'ed228bfa2ece43f0a34a0aa95985a501', '-t', 'secret_37RsVuHNkIx573FXkg4geRqXcmiBSlBH45QxmVEXIQ9', '-o', './graph_out.html']
         process = subprocess.Popen(command, stdout=subprocess.PIPE)
         output, error = process.communicate()
 
