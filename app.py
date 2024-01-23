@@ -9,12 +9,14 @@ app = Flask(__name__)
 
 def home():
     if request.method == 'POST':
-        command = ['ls', '-l']  # Replace with your command
+        command = ['pdm run start -p ed228bfa2ece43f0a34a0aa95985a501 -t secret_37RsVuHNkIx573FXkg4geRqXcmiBSlBH45QxmVEXIQ9 -o ./graph_out.html']  # Replace with your command
         process = subprocess.Popen(command, stdout=subprocess.PIPE)
         output, error = process.communicate()
 
-        # Pass the output to another template
-        return render_template('output.html', output=output.decode('utf-8'))
+        with open('graph_out.html') as f:
+            graph_output = f.read()
+            
+        return render_template('output.html', output=graph_output)
 
     return render_template('index.html')
 
